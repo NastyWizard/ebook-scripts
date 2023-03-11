@@ -1,0 +1,5 @@
+backup/*
+converted/*
+raw/*
+**/*.epub
+**/*.mobi
