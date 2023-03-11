@@ -4,10 +4,13 @@ import os
 import subprocess
 import shutil
 from termcolor import colored
+import json
 
+with open('settings.json', 'r') as f:
+    variables = json.load(f)
 
-kindle_path = "H:\documents"
-output_dir = "./backup"
+kindle_path = variables['KINDLE_DIR']
+output_dir = variables['BACKUP_DIR']
 
 def get_all_files(directory):
     all_files = []

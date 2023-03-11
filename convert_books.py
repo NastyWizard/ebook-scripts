@@ -3,10 +3,13 @@ import os.path
 import os
 import subprocess
 from termcolor import colored
+import json
 
-calibre_path = 'C:\Program Files/Calibre2'
-convert = f"\"{calibre_path}/ebook-convert.exe\""
-output_dir = "./converted"
+with open('settings.json', 'r') as f:
+    variables = json.load(f)
+
+convert = f"\"{variables['CALIBRE_DIR']}/ebook-convert.exe\""
+output_dir = variables['CONVERT_OUTDIR']
 
 def get_all_files(directory):
     all_files = []
